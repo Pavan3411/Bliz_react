@@ -1,0 +1,25 @@
+if we want to override the default breakpoint with a complete new set of breakpoint should be added in theme before extend
+if we  want to add custom breakpoints or only adapt single default breakpoint should be added in extend section
+Replace breakpoints: Use theme.screens to define a completely new set.
+Extend breakpoints: Use theme.extend.screens to add or tweak.
+Plugins: Use the plugins section to define custom utilities, components, or styles that can leverage your breakpoints.
+
+sm:max-xl - range starting from sm to the beginning of xl
+
+.learn {
+    @apply bg-red-500
+    border-2
+}    if we have to call same component so we can give learn classname so that css would not be more
+
+flex-wrap we can use 
+@media only screen and (max-width:600px){}
+sm:640px min, md:768px min, lg:1024px min, xl:1280min, 2xl:1536px min
+
+Summary Table
+Utility	Behavior	Use Case
+whitespace-normal	Wrap text, collapse extra spaces	Regular paragraphs and text blocks
+whitespace-nowrap	No wrapping	Buttons, inline elements
+whitespace-pre	Preserve spaces and line breaks	Code blocks, poetry
+whitespace-pre-line	Preserve line breaks, collapse spaces	Multi-line user input, formatted text
+whitespace-pre-wrap	Preserve spaces, line breaks, and wrapping	Formatted text in small containers
+whitespace-break-spaces	Preserve spaces and allow wrapping	Exact spacing with wrapping

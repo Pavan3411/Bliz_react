@@ -13,7 +13,22 @@ export default {
         raleway: ['Raleway', 'sans-serif'],
         syne: ['Syne', 'sans-serif'],
       },
+      colors:{
+        lightYellow: 'rgb(245, 245, 239)',
+      },
+      screens: {
+        'custom': '768px', 
+        'custom1': '850px',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
+
 }
+
+
+
+
+
