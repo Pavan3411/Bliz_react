@@ -20,6 +20,9 @@ export default {
         'custom': '768px', 
         'custom1': '850px',
       },
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(-45deg, #4481eb, #04befe)',
+      },
     },
   },
   plugins: [

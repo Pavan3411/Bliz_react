@@ -9,7 +9,7 @@ const Card = ({}) => {
       setIsEditing((prev) => !prev);  
   };
   return (
-    <div className='xl:w-72 w-11/12 bg-white shadow-lg rounded-t-3xl  flex flex-col space-y-6 font-raleway'>
+    <div className='xl:w-80 w-11/12 bg-white shadow-lg rounded-t-3xl  flex flex-col space-y-6 font-raleway'>
         <div className=''>
             <img src={assets.card_bg} alt="" className='h-24 w-80 rounded-3xl'/>
             </div>
@@ -54,11 +54,9 @@ const Card = ({}) => {
 )}
             </p>
         </div>
-        <div className='grid text-md grid-cols-2 text-white whitespace-nowrap'>
-            <button className='bg-blue-800 hover:bg-blue-900 p-1'>
-               <p className='flex items-center gap-2 text-sm justify-center cursor-pointer'> <CreditIcon/>Apply Credit</p>
-            </button>
-            <button className='bg-blue-500 hover:bg-blue-600 p-1'>
+        <div className='grid text-md text-white whitespace-nowrap'>
+          
+            <button className='bg-blue-500 hover:bg-blue-600 p-1 tracking-wider'>
                <p className='flex items-center gap-2 text-sm justify-center cursor-pointer'><LogoutIcon/> Logout</p>
             </button>
         </div>

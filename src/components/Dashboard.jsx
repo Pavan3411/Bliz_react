@@ -60,7 +60,7 @@ const Dashboard = () => {
             <button className='bg-blue-600 rounded-full p-2 text-white font-semibold max-w-32 hover:scale-105 text-sm lg:text-base transition-all'>View Details</button></div>
             </div>
             </div>
-            <div className='lg:basis-2/3 md:basis-2/3 flex flex-col 2xl:flex-row justify-between whitespace-nowrap bg-blue-100 border-[1px] shadow-lg p-3 text-base base 2xl:hidden'>
+            <div className='lg:basis-2/3 md:basis-2/3 flex flex-col 2xl:flex-row justify-between whitespace-nowrap bg-white border-[1px] shadow-lg p-3 text-base base 2xl:hidden'>
             <div className='space-y-2'>
               <div className='flex w-full justify-between'>
                 <span>

@@ -6,14 +6,14 @@ import Invite from './Invite';
 const Header = ({toggleSidePanel}) => {
   const { InviteIcon, GroupsIcon, LanguageIcon, FilterIcon, BellIcon, UserIcon, CrossIcon } = icons;
 
-  // Centralized state management for dropdowns
+
   const [openDropdown, setOpenDropdown] = useState(null);
 
-  // Language Dropdown Logic
+  
   const [selectedLanguage, setSelectedLanguage] = useState("EN");
 
   const toggleLanguageDropdown = () => {
-    // Close other dropdowns first
+    
     setOpenDropdown(openDropdown === 'language' ? null : 'language');
   };
 
@@ -22,23 +22,23 @@ const Header = ({toggleSidePanel}) => {
     setOpenDropdown(null);
   };
 
-  // User Dropdown Logic
+  
   const toggleUserDropdown = () => {
-    // Close other dropdowns first
+    
     setOpenDropdown(openDropdown === 'user' ? null : 'user');
   };
 
-  // Invite Modal Logic
+  
   const [invite, setInvite] = useState(false);
   const openInvite = () => {
     setInvite(true);
-    setOpenDropdown(null); // Close any open dropdowns
+    setOpenDropdown(null); 
   };
   const closeInvite = () => setInvite(false);
 
   return (
     <div className="flex fixed top-0 left-0 z-50 justify-between bg-white w-full border-b-[1px] border-gray-300 px-4 py-2 sm:overflow-visible">
-      {/* Logo Section */}
+      
       <div className='flex gap-5 items-center'>
         <Link to="/" className="hidden lg:block md:block">
           <img src={assets.logo} alt="Logo" />
@@ -51,9 +51,9 @@ const Header = ({toggleSidePanel}) => {
         </button>
       </div>
 
-      {/* Menu Items */}
+      
       <div className="flex items-center gap-x-4 font-light">
-        {/* Invite */}
+        
         <div className="flex items-center gap-x-2">
           <InviteIcon className="w-6 h-6" onClick={openInvite} />
           {invite && (
@@ -64,13 +64,13 @@ const Header = ({toggleSidePanel}) => {
           <p className="hidden lg:block md:block">Invite</p>
         </div>
 
-        {/* Group Trading */}
+
         <div className="flex items-center gap-x-2">
           <GroupsIcon className="w-6 h-6" />
           <p className="hidden lg:block md:block">Group Trading</p>
         </div>
 
-        {/* Language Dropdown */}
+        
         <div className="relative flex items-center gap-x-2">
           <LanguageIcon className="w-5 h-5" />
           <button
@@ -104,7 +104,7 @@ const Header = ({toggleSidePanel}) => {
           )}
         </div>
 
-        {/* Notification Dropdown */}
+        
         <div className='relative'>
           <button onClick={() => setOpenDropdown(openDropdown === 'notification' ? null : 'notification')}>
             <BellIcon className="w-5 h-5"/>
@@ -166,13 +166,13 @@ const Header = ({toggleSidePanel}) => {
               </div>
               <div className='p-2 px-3 flex font-bold md:font-semibold justify-between'>
                 <span>Mark all as read</span>
-                <span className='text-blue-700'>View All</span>
+                <Link to='/login' className='text-blue-700'>View All</Link>
               </div>
             </div>
           )}
         </div>
 
-        {/* User Dropdown */}
+        
         <div className="relative">
           <button
             onClick={toggleUserDropdown}
@@ -190,7 +190,7 @@ const Header = ({toggleSidePanel}) => {
               >
                 Dashboard
               </Link>
-              <Link to='#'
+              <Link to='/login'
                 onClick={() => setOpenDropdown(null)}
                 className="block px-4 py-2 text-gray-700 hover:bg-gray-200 active:bg-blue-700 active:text-white"
               >

@@ -7,6 +7,8 @@ import Modal_logo from './Modal_logo.svg';
 import head_icon from './head_icon.png';
 import three_user from './three_user.png'
 import supplier_dash from './supplier_dash.png';
+import login_img from './login.svg';
+import register_img from './register.svg'
 import { FaCircleUser } from "react-icons/fa6";
 import { BsBellFill } from "react-icons/bs";
 import { GrLanguage } from "react-icons/gr";
@@ -41,8 +43,13 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { BsChatText } from "react-icons/bs";
 import { TfiPrinter } from "react-icons/tfi";
 import { RiBriefcase4Line } from "react-icons/ri";
-
-
+import { SlUser } from "react-icons/sl";
+import { CiLock } from "react-icons/ci";
+import { FaFacebookF } from "react-icons/fa6";
+import { RiTwitterXFill } from "react-icons/ri";
+import { CgGoogle } from "react-icons/cg";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { BsEnvelope } from "react-icons/bs";
 
 export const assets = {
     logo,
@@ -54,6 +61,8 @@ export const assets = {
     head_icon,
     three_user,
     supplier_dash,
+    login_img,
+    register_img,
 }
 
 export const icons = {
@@ -91,4 +100,11 @@ export const icons = {
     ChatIcon:BsChatText,
     PrintIcon:TfiPrinter,
     BriefCaseIcon:RiBriefcase4Line,
+    LockIcon:CiLock,
+    UserRegIcon:SlUser,
+    FacebookIcon:FaFacebookF,
+    TwitterIcon:RiTwitterXFill,
+    GoogleIcon:CgGoogle,
+    LinkedinIcon:FaLinkedinIn,
+    EnvelopeIcon:BsEnvelope,
   };

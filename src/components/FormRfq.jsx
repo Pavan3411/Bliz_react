@@ -30,10 +30,10 @@ const FormRfq = () => {
         <SidePanel className=''/>
         </div>
         <div className='lg:basis-5/12 w-full flex flex-col sm:items-center md:basis-4/12 lg:mx-2'>
-        <div className='bg-white shadow-xl p-4 mt-5 flex flex-col sm:w-11/12 md:w-full m-2'>
+        <div className='bg-white shadow-xl md:p-4 p-1 py-3 mt-5 flex flex-col sm:w-11/12 md:w-full m-2'>
             <h1 className='text-blue-700 font-extrabold md:font-bold'>POST A NEW REQUIREMENT</h1>
             <p className='text-gray-600 font-bold md:font-medium'>Product Details</p>
-            <form className='flex flex-col w-full text-sm lg:text-base md:text-base space-y-2 mt-1'>
+            <form className='flex flex-col w-full text-sm md:text-base space-y-2 p-2 mt-1'>
                 <label htmlFor='category'>Product Category<span className='text-red-800'>*</span></label>
                 <select name="category" id="category" className='border-[1px] border-gray-300 focus:border-gray-500 outline-none h-6'>
                     <option value="steel">Steel</option>
