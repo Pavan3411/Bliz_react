@@ -26,18 +26,18 @@ const Order = () => {
         </div>
         <div className='lg:w-3/4 w-full mt-2 p-1 lg:p-3 md:p-3 mr-3'>
         <div className='flex flex-col sm:flex-row sm:justify-between  bg-white shadow-lg p-4 w-full sm:items-center'>
-            <h1 className='font-bold text-lg sm:text-xl text-blue-700'>Order</h1>
+            <h1 className='font-bold text-lg sm:text-xl text-lightRed'>Order</h1>
             <div className='flex space-x-3 justify-between mt-2 sm:mt-0'>
                 <span className='relative'>
-                <input type="text" placeholder='Search' className='rounded-full border-[1px] border-gray-200 p-2 focus:outline-none placeholder:text-center placeholder:text-sm w-28' />
+                <input type="text" placeholder='Search' className='rounded-md border-[1px] border-gray-200 p-2 focus:outline-none placeholder:text-center placeholder:text-sm w-28' />
                 <SearchIcon className='absolute top-3 left-2 text-gray-400 w-5 h-5'/>
                 </span>
                 <span>
-                <button className='rounded-full border-[1px] border-gray-200 p-[10px] flex items-center justify-center gap-2'>
+                <button className='rounded-md border-[1px] border-gray-200 p-[10px] flex items-center justify-center gap-2'>
                     <FilterIcon className='w-5 h-5'/>
                     <p className='text-sm'>Filter</p>
                     </button></span>
-                <button className='text-white px-3 font-medium border-[1px] bg-blue-700 p-2 rounded-full flex gap-2 items-center'>
+                <button className='text-white px-3 font-medium border-[1px] bg-lightRed p-2 rounded-md flex gap-2 items-center'>
                     <NoteIcon className='w-6 h-6'/>
                     <Link to='/rfq-form' className='text-xs lg:text-base whitespace-nowrap'>Post a New RFQ</Link>
                 </button>
@@ -50,14 +50,14 @@ const Order = () => {
           key={index}
           onClick={() => setActiveTab(index)}
           className={`cursor-pointer pb-1 text-[13px] md:text-sm ${
-            activeTab === index ? "border-b-2 border-blue-700 text-blue-700" : ""
+            activeTab === index ? "border-b-2 border-darkRed text-lightRed" : ""
           }`}
         >
           {tab.label}
         </p>
       ))}
     </div>
-    <div className='overflow-x-auto lg:overflow-hidden md:overflow-hidden scrollbar-thin scrollbar-thumb-blue-700 scrollbar-track-blue-100  w-full'>
+    <div className='overflow-x-auto lg:overflow-hidden md:overflow-hidden scrollbar-thin scrollbar-thumb-lightRed scrollbar-track-fadeRed  w-full'>
         <hr className=' bg-gray-500 h-[2px] w-[140%] lg:w-full md:w-full mt-3'/>
     <div className='text-gray-400 xl:text-sm text-[13px] grid sm:grid-cols-[0.2fr,1fr,1.5fr,2fr,1fr] grid-cols-[0.2fr,1fr,1.5fr,2fr,1fr] mt-4 md:mx-2 mx-0 items-center font-semibold p-2 w-[140%] lg:w-full md:w-full'>
             <input type='checkbox' className='border-[1px] border-gray-500 w-4 h-4'/>
@@ -66,30 +66,30 @@ const Order = () => {
             <p className='whitespace-nowrap '>Expected Date of Completion</p>
             <p className=''>Status</p>
         </div>
-        <div className='xl:text-sm text-xs grid sm:grid-cols-[0.2fr,1fr,1.5fr,2fr,1fr] grid-cols-[0.2fr,1fr,1.5fr,2fr,1fr] mt-3 2xl:mx-2 mx-0 items-center border-[1px] border-gray-300 p-2 py-3 bg-blue-50 w-[140%] lg:w-[98%] md:w-full' onClick={handleToggle}>
+        <div className='xl:text-sm text-xs grid sm:grid-cols-[0.2fr,1fr,1.5fr,2fr,1fr] grid-cols-[0.2fr,1fr,1.5fr,2fr,1fr] mt-3 2xl:mx-2 mx-0 items-center border-[1px] border-gray-300 p-2 py-3 bg-fadeRed w-[140%] lg:w-[98%] md:w-full' onClick={handleToggle}>
             <input checked={!isOpen} readOnly type='checkbox' className='border-[1px] border-gray-500 w-4 h-4'/>
             <p className='font-bold flex'><span className='hidden lg:block'>Order No.</span>BORN-873</p>
             <p className='font-semibold -ml-3 sm:ml-0'>14 Sept 2023 15:06 PM</p>
             <p className='font-semibold ml-4 sm:ml-0'>30 Oct 2023 12:00 PM</p>
-            <button className='bg-blue-100 text-blue-900 lg:text-[10px] text-[9px] border-[1px] border-blue-200  font-semibold rounded-full w-20 h-6 flex justify-center items-center -ml-3 sm:ml-0'>Order Recieved</button>
+            <button className='bg-fadeRed text-darkRed lg:text-[10px] text-[9px] border-[1px] border-fadeRed  font-semibold rounded-md w-20 h-6 flex justify-center items-center -ml-3 sm:ml-0'>Order Recieved</button>
             </div>
             {isOpen && (
                 <div className='lg:border md:border 2xl:mx-2 lg:w-[98%] '>
                     <div className='pl-2 my-3'>
-                        <p className='font-bold  text-blue-700 px-2'>Order No.BORN-873</p>
+                        <p className='font-bold  text-grayShade px-2'>Order No.BORN-873</p>
                     </div>
                     <hr className='md:w-full w-[140%] lg:w-full flex justify-center'/>
                     <div className='flex justify-between lg:p-1 w-[140%] sm:w-full'>
                         <div className='flex'>
                             <div className='md:p-2 p-1'>
-                                <span className='xl:h-12 xl:w-12 md:h-10 md:w-10 h-9 w-9 bg-gray-300 rounded-full sm:flex items-center justify-center hidden'>
-                                    <User2Icon className='lg:h-6 lg:w-6 h-4 w-6 text-blue-700 '/></span>
+                                <span className='xl:h-12 xl:w-12 md:h-10 md:w-10 h-9 w-9 bg-gray-300 rounded-md sm:flex items-center justify-center hidden'>
+                                    <User2Icon className='lg:h-6 lg:w-6 h-4 w-6 text-darkRed'/></span>
                             </div>
                             <div className='flex flex-col gap-y-2 p-2 py-2'>
                                 <span className='flex xl:gap-5 md:gap-2 gap-1 items-center'>
-                                    <p className='text-blue-700 font-bold text-sm lg:text-base whitespace-nowrap'>Customer Info</p>
+                                    <p className='text-lightRed font-bold text-sm lg:text-base whitespace-nowrap'>Customer Info</p>
                                     <TickIcon className='text-green-700 lg:w-6 lg:h-6 md:w-5 md:h-5 h-5 w-5'/>
-                                    <EditIcon className=''/>
+                                    <EditIcon className='w-5 h-5'/>
                                 </span>
                                 <span className='text-xs text-gray-600'>
                                     <p>Jane Doe</p>
@@ -100,14 +100,14 @@ const Order = () => {
                         </div>
                         <div className='flex'>
                             <div className='p-2'>
-                                <span className='xl:h-12 xl:w-12 md:h-10 md:w-10 h-9 w-9 bg-gray-300 rounded-full sm:flex hidden items-center justify-center'>
-                                    <BriefCaseIcon className='lg:h-6 lg:w-6 h-4 w-6 text-blue-700'/></span>
+                                <span className='xl:h-12 xl:w-12 md:h-10 md:w-10 h-9 w-9 bg-gray-300 rounded-md sm:flex hidden items-center justify-center'>
+                                    <BriefCaseIcon className='lg:h-6 lg:w-6 h-4 w-6 text-darkRed'/></span>
                             </div>
                             <div className='flex flex-col gap-y-2 p-2'>
                                 <span className='flex xl:gap-5 md:gap-2 gap-1 items-center'>
-                                    <p className='text-blue-700 font-bold whitespace-nowrap text-sm lg:text-base '>Company Info </p>
+                                    <p className='text-lightRed font-bold whitespace-nowrap text-sm lg:text-base '>Company Info </p>
                                     <TickIcon className='text-green-700 lg:w-6 lg:h-6 md:w-5 md:h-5 h-5 w-5'/>
-                                    <EditIcon/>
+                                    <EditIcon className='w-5 h-5'/>
                                 </span>
                                 <span className='text-xs mr-2 text-gray-600'>
                                     <p>PT Blitznet</p>
@@ -117,14 +117,14 @@ const Order = () => {
                         </div>
                         <div className='flex'>
                             <div className='p-2'>
-                                <span className='xl:h-12 xl:w-12 md:h-10 md:w-10 h-9 w-9 bg-gray-300 rounded-full sm:flex hidden items-center justify-center'>
-                                    <TruckIcon className='lg:h-6 lg:w-6 h-4 w-6 text-blue-700'/></span>
+                                <span className='xl:h-12 xl:w-12 md:h-10 md:w-10 h-9 w-9 bg-gray-300 rounded-md sm:flex hidden items-center justify-center'>
+                                    <TruckIcon className='lg:h-6 lg:w-6 h-4 w-6 text-darkRed'/></span>
                             </div>
                             <div className='flex flex-col gap-y-2 p-2'>
                                 <span className='flex xl:gap-5 md:gap-2 gap-1 items-center'>
-                                    <p className='text-blue-700 font-bold whitespace-nowrap text-sm lg:text-base '>Delivery Info</p>
+                                    <p className='text-lightRed font-bold whitespace-nowrap text-sm lg:text-base '>Delivery Info</p>
                                     <TickIcon className='text-green-700  lg:w-6 lg:h-6 md:w-5 md:h-5 h-5 w-5'/>
-                                    <EditIcon/>
+                                    <EditIcon className='w-5 h-5'/>
                                 </span>
                                 <span className='text-xs lg:mx-0 md:mx-0 text-gray-600'>
                                     <p><span className='font-bold lg:font-semibold'>Shipping:</span> Express</p>
@@ -138,23 +138,23 @@ const Order = () => {
                     <hr />
                     <div className='flex justify-center mt-4 w-[135%] md:w-full'>
                     <div className='border-[1px] bg-gray-100 rounded-xl w-[135%] md:w-11/12'>
-                    <div className='bg-blue-500 rounded-xl h-[6px] text-center w-[40%] md:w-96 text-[7px]'></div></div>
+                    <div className='bg-lightRed rounded-xl h-[6px] text-center w-[40%] md:w-96 text-[7px]'></div></div>
                 </div>
                 <div className='flex justify-around lg:text-sm w-[135%] text-[13px] md:w-full font-bold lg:font-semibold'>
                     <span className='whitespace-nowrap'>
                         <p>Order Recieved</p>
-                        <p className='text-blue-700 font-bold text-[10px]'>14-10-2023 18:11:08</p>
+                        <p className='text-lightRed font-bold text-[10px]'>14-10-2023 18:11:08</p>
                     </span>
                     <span className='whitespace-nowrap'>
                         <p>Order Confirmed</p>
-                        <p className='text-blue-700 font-bold text-[10px]'>14-10-2023 18:11:08</p>
+                        <p className='text-lightRed font-bold text-[10px]'>14-10-2023 18:11:08</p>
                     </span>
                     <p className='whitespace-nowrap'>Payment Done</p>
                     <p className='whitespace-nowrap'>Order Delivered</p>
                     <p className='whitespace-nowrap'>Order Completed</p>
                 </div>
                     <div className='flex lg:px-5 md:px-3 px-2 mt-2 items-center'>
-                        <h2 className='text-blue-700 font-bold my-4'>Products</h2>
+                        <h2 className='text-grayShade font-bold my-4'>Products</h2>
                         
                     </div>
                     <div className='gap-5 lg:px-5 md:px-3 px-2'>
@@ -172,7 +172,7 @@ const Order = () => {
                             <input type="checkbox" className='w-3 h-3'/>
                                 <p>Steel</p>
                                 <p>Stainless Steel</p>
-                                <button className='bg-red-100 text-red-900 border-[1px] border-red-300 text-[8px] md:text-[9px] lg:text-[9px] font-semibold rounded-full flex justify-center items-center lg:w-24 md:w-24 w-20 h-4 p-2'>Not Available Yet</button>
+                                <button className='bg-red-100 text-red-900 border-[1px] border-red-300 text-[8px] md:text-[9px] lg:text-[9px] font-semibold rounded-md flex justify-center items-center lg:w-24 md:w-24 w-20 h-4 p-2'>Not Available Yet</button>
                                 <p>Rp 1.329.000</p>
                             </div>
                             <hr className='mt-2' />

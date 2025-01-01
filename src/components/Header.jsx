@@ -37,14 +37,14 @@ const Header = ({toggleSidePanel}) => {
   const closeInvite = () => setInvite(false);
 
   return (
-    <div className="flex fixed top-0 left-0 z-50 justify-between bg-white w-full border-b-[1px] border-gray-300 px-4 py-2 sm:overflow-visible">
+    <div className="flex fixed top-0 left-0 z-50 justify-between bg-white w-full border-b-[1px] border-gray-400 px-4 py-2 sm:overflow-visible">
       
       <div className='flex gap-5 items-center'>
         <Link to="/" className="hidden lg:block md:block">
-          <img src={assets.logo} alt="Logo" />
+          <img src={assets.Fbi_logo} alt="Logo" className='w-44 h-12' />
         </Link>
         <Link to="/" className="lg:hidden md:hidden block mx-0">
-          <img src={assets.head_icon} alt="Head Icon" />
+          <img src={assets.fb_logo} alt="Head Icon" className='w-12 h-10' />
         </Link>
         <button className='block md:hidden lg:hidden' onClick={toggleSidePanel}>
           <FilterIcon className='w-10 h-10'/>
@@ -64,15 +64,8 @@ const Header = ({toggleSidePanel}) => {
           <p className="hidden lg:block md:block">Invite</p>
         </div>
 
-
-        <div className="flex items-center gap-x-2">
-          <GroupsIcon className="w-6 h-6" />
-          <p className="hidden lg:block md:block">Group Trading</p>
-        </div>
-
-        
         <div className="relative flex items-center gap-x-2">
-          <LanguageIcon className="w-5 h-5" />
+          {/* <LanguageIcon className="w-5 h-5" /> */}
           <button
             onClick={toggleLanguageDropdown}
             className="flex items-center gap-2 bg-gray-100 py-2 px-4 rounded focus:outline-none"
@@ -105,7 +98,7 @@ const Header = ({toggleSidePanel}) => {
         </div>
 
         
-        <div className='relative'>
+        <div className='relative flex items-center'>
           <button onClick={() => setOpenDropdown(openDropdown === 'notification' ? null : 'notification')}>
             <BellIcon className="w-5 h-5"/>
           </button>
@@ -118,7 +111,7 @@ const Header = ({toggleSidePanel}) => {
                 </button>
               </div>
               <div className='p-2 mx-1 space-y-1'>
-                <span className='flex items-center bg-blue-100 rounded lg:gap-4 md:gap-4 gap-3'>
+                <span className='flex items-center bg-red-100 rounded lg:gap-4 md:gap-4 gap-3'>
                   <div className='bg-gray-100 rounded-md w-12 h-8 flex justify-center ml-2 items-center'>
                     <input type='checkbox' className='border-[1px] border-gray-500 w-3 h-3'/>
                   </div>
@@ -127,7 +120,7 @@ const Header = ({toggleSidePanel}) => {
                     <p className='text-gray-400'>25-08-2022 08:53:00</p>
                   </div>
                 </span>
-                <span className='flex items-center bg-blue-100 rounded gap-4'>
+                <span className='flex items-center bg-red-100 rounded gap-4'>
                   <div className='bg-gray-100 rounded-md w-8 h-8 flex justify-center ml-2 items-center'>
                     <input type='checkbox' className='border-[1px] border-gray-500 w-3 h-3'/>
                   </div>
@@ -166,7 +159,7 @@ const Header = ({toggleSidePanel}) => {
               </div>
               <div className='p-2 px-3 flex font-bold md:font-semibold justify-between'>
                 <span>Mark all as read</span>
-                <Link to='/login' className='text-blue-700'>View All</Link>
+                <Link to='/notification' className='text-darkRed' onClick={() => setOpenDropdown(null)}>View All</Link>
               </div>
             </div>
           )}
@@ -186,13 +179,13 @@ const Header = ({toggleSidePanel}) => {
               <Link
                 to="/"
                 onClick={() => setOpenDropdown(null)}
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-200 active:bg-blue-700 active:text-white"
+                className="block px-4 py-2 text-gray-700 hover:bg-gray-200 active:bg-lightRed active:text-white"
               >
                 Dashboard
               </Link>
               <Link to='/login'
                 onClick={() => setOpenDropdown(null)}
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-200 active:bg-blue-700 active:text-white"
+                className="block px-4 py-2 text-gray-700 hover:bg-gray-200 active:bg-lightRed active:text-white"
               >
                 Logout
               </Link>

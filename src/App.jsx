@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -10,11 +10,21 @@ import Payment from './components/Payment'
 import Order from './components/Order'
 import SidePanel from './components/SidePanel'
 import Login from './components/Login/Login'
+import Setting from './components/Setting'
+import Address from './components/Address'
+import Finance from './components/Finance'
+import Notification from './components/Notification'
 
 function App() {
   const [showSidePanel, setShowSidePanel] = useState(false)
   const [isLogin, setIsLogin] = useState(false);
-  const location =useLocation(  )
+  const location =useLocation()
+
+  const navigate = useNavigate()
+
+  const handleGoBack = () => {
+    navigate(-1)  // Navigate to previous page
+  }
 
   const handleLogin = ()=> {
     setIsLogin(true);
@@ -43,7 +53,7 @@ function App() {
           </div>
         </div>
       )}
-      <div className="app mt-14">
+      <div className="app mt-16">
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
@@ -51,6 +61,10 @@ function App() {
           <Route path="/rfq" element={<Rfq />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/order" element={<Order />} />
+          <Route path='/setting' element={<Setting handleGoBack={handleGoBack}/>}/>
+          <Route path='/address' element={<Address/>}/>
+          <Route path='/finance' element={<Finance/>}/>
+          <Route path='/notification' element={<Notification/>}/>
         </Routes>
       </div>
       <Footer />

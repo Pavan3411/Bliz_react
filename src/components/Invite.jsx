@@ -15,8 +15,8 @@ const Invite = ({ onclose }) => {
         onWheel={handleWheel}
       >
         <div className="flex flex-col justify-center w-full">
-          <div className="flex justify-between items-center bg-blue-700 w-full px-4 py-2 p-2">
-            <img src={assets.Modal_logo} alt="Logo" className="w-8 h-8 " />
+          <div className="flex justify-between items-center bg-darkRed w-full px-4 py-2 p-2">
+            <img src={assets.App_Logo} alt="Logo" className="w-12 h-7" />
             <h1 className="text-white text-lg font-semibold">
               INVITE BUYER/SUPLLIER
             </h1>
@@ -50,7 +50,7 @@ const Invite = ({ onclose }) => {
                 <input type="text" className='border-[1px] h-6 w-full' />
             </div>
             <span className='flex justify-end'>
-            <button className='bg-blue-700 text-white font-semibold h-6 w-11/12'>
+            <button className='bg-lightRed text-white font-semibold h-6 w-11/12'>
                 Invite
             </button></span>
             </span>

@@ -26,18 +26,18 @@ const Payment = () => {
         </div>
         <div className='lg:w-3/4 md:3/4 w-full mt-2 p-1 lg:p-3 md:p-3 mr-3'>
         <div className='flex flex-col sm:flex-row sm:justify-between bg-white shadow-lg p-4 w-full sm:items-center'>
-            <h1 className='font-bold text-lg sm:text-xl text-blue-700'>PAYMENT</h1>
+            <h1 className='font-bold text-lg sm:text-xl text-lightRed'>PAYMENT</h1>
             <div className='flex space-x-3 justify-between mt-2 sm:mt-0'>
                 <span className='relative'>
-                <input type="text" placeholder='Search' className='rounded-full border-[1px] border-gray-200 p-2 focus:outline-none placeholder:text-center placeholder:text-sm w-28' />
+                <input type="text" placeholder='Search' className='rounded-md border-[1px] border-gray-200 p-2 focus:outline-none placeholder:text-center placeholder:text-sm w-28' />
                 <SearchIcon className='absolute top-3 left-2 text-gray-400 w-5 h-5'/>
                 </span>
                 <span>
-                <button className='rounded-full border-[1px] border-gray-200 p-[10px] flex items-center justify-center gap-2'>
+                <button className='rounded-md border-[1px] border-gray-200 p-[10px] flex items-center justify-center gap-2'>
                     <FilterIcon className='w-5 h-5'/>
                     <p className='text-sm'>Filter</p>
                     </button></span>
-                <button className='text-white px-3 font-medium border-[1px] bg-blue-700 p-2 rounded-full flex gap-2 items-center'>
+                <button className='text-white px-3 font-medium border-[1px] bg-lightRed p-2 rounded-md flex gap-2 items-center'>
                     <NoteIcon className='w-6 h-6'/>
                     <Link to='/rfq-form' className='text-xs lg:text-base whitespace-nowrap'>Post a New RFQ</Link>
                 </button>
@@ -50,14 +50,14 @@ const Payment = () => {
           key={index}
           onClick={() => setActiveTab(index)}
           className={`cursor-pointer pb-1 text-xs lg:text-sm md:text-sm ${
-            activeTab === index ? "border-b-2 border-blue-700 text-blue-700" : ""
+            activeTab === index ? "border-b-2 border-darkRed text-lightRed" : ""
           }`}
         >
           {tab.label}
         </p>
       ))}
     </div>
-    <div className='overflow-x-auto scrollbar-thin scrollbar-thumb-blue-700 scrollbar-track-blue-100 lg:w-full md:w-full'>
+    <div className='overflow-x-auto scrollbar-thin scrollbar-thumb-lightRed scrollbar-track-fadeRed lg:w-full md:w-full'>
         <hr className=' bg-gray-500 h-[2px] w-[130%] lg:w-full md:w-full mt-4'/>
         <div className='text-gray-400 overflow-x-auto text-sm grid grid-cols-[0.2fr,repeat(4,1fr)] mt-4 items-center font-semibold p-2 w-[130%] lg:w-full md:w-full'>
             <input type='checkbox' className='border-[1px] border-gray-500 w-4 h-4'/>
@@ -67,18 +67,18 @@ const Payment = () => {
             <p className='flex justify-end pr-8'>Status</p>
         </div>
             <div className='border-[1px] border-gray-300 w-[130%] lg:w-full md:w-full'>
-            <div className='text-sm grid grid-cols-[0.2fr,repeat(4,1fr)] items-center font-semibold border-b-[1px]  p-2 border-gray-300 bg-blue-50' onClick={handleToggle}>
+            <div className='text-sm grid grid-cols-[0.2fr,repeat(4,1fr)] items-center font-semibold border-b-[1px]  p-2 border-gray-300 bg-fadeRed' onClick={handleToggle}>
             <input type='checkbox' className='border-[1px] border-gray-500 w-4 h-4'/>
             <p>Budi Hariman</p>
             <p className='flex justify-center'>2</p>
             <p className='flex justify-center'>Rp.300,000,000</p>
             <span className='flex justify-end pr-3'>
-            <button className='bg-blue-100 text-blue-900 font-semibold rounded-full text-[10px] border-[1px] border-blue-300 w-16 h-4 flex justify-center items-center'>processing</button></span>
+            <button className='bg-fadeRed text-darkRed font-semibold rounded-md text-[10px] border-[1px] border-fadeRed w-16 h-4 flex justify-center items-center'>processing</button></span>
         </div>
         {isOpen && (
             <div>
         <div className='flex justify-between items-center mx-3 px-3 p-2'>
-        <h1 className='text-blue-700 font-bold'>
+        <h1 className='text-lightRed font-bold'>
         Payment Details
         </h1>
         <span className='flex items-center gap-2'>
@@ -88,43 +88,43 @@ const Payment = () => {
     </div>
     <span className='flex justify-center'>
     <hr className=' border-gray-300 h-[1px] mt-1 w-[97%]'/></span>
-    <div className='text-[13px] grid grid-cols-[0.3fr,repeat(4,1fr)] mt-1 mx-3 items-center font-semibold p-2'>
+    <div className='text-[13px] grid grid-cols-[0.3fr,repeat(4,1fr)] mt-1 mx-3 items-center font-bold p-2'>
         <input type='checkbox' className='border-[1px] border-gray-500 w-4 h-4'/>
         <span className=''>
-            <p className='text-blue-700 mb-[2px]'>Quote Number</p>
+            <p className='text-grayShade font-bold mb-[2px]'>Quote Number</p>
             <p>BTN-1607</p>
         </span>
         <span>
-            <p className='text-blue-700 mb-[2px]'>Products</p>
+            <p className='text-grayShade mb-[2px]'>Products</p>
             <p>Steel</p>
         </span>
         <span>
-            <p className='text-blue-700 mb-[2px] justify-self-center'>Payment terms</p>
-            <button className='bg-red-100 text-red-900 border-[1px] border-red-300 text-[9px] font-semibold rounded-full flex justify-center items-center w-8 h-4 justify-self-center -ml-5 sm:ml-0'>LC</button>
+            <p className='text-grayShade mb-[2px] justify-self-center'>Payment terms</p>
+            <button className='bg-red-100 text-red-900 border-[1px] border-red-300 text-[9px] font-semibold rounded-md flex justify-center items-center w-8 h-4 justify-self-center -ml-5 sm:ml-0'>LC</button>
         </span>
         <span>
-            <p className='text-blue-700 v'>Total Price</p>
+            <p className='text-grayShade'>Total Price</p>
             <p>Rp. 6,141,892,00</p>
         </span>
     </div>
     <span className='flex justify-center'>
     <hr className='border-gray-300 h-[1px] mt-1 mb-2 w-[97%]'/></span>
-    <div className='text-[13px] grid grid-cols-[0.3fr,repeat(4,1fr)] mt-1 mx-3 items-center font-semibold p-2'>
+    <div className='text-[13px] grid grid-cols-[0.3fr,repeat(4,1fr)] mt-1 mx-3 items-center font-bold p-2'>
         <input type='checkbox' className='border-[1px] border-gray-500 w-4 h-4'/>
         <span className=''>
-            <p className='text-blue-700 mb-[2px]'>Quote Number</p>
+            <p className='text-grayShade mb-[2px]'>Quote Number</p>
             <p>BTN-1607</p>
         </span>
         <span>
-            <p className='text-blue-700 mb-[2px]'>Products</p>
+            <p className='text-grayShade mb-[2px]'>Products</p>
             <p>5 Products</p>
         </span>
         <span>
-            <p className='text-blue-700 mb-[2px] justify-self-center'>Payment terms</p>
-            <button className='bg-blue-50 text-blue-900 text-[9px] border-[1px] border-blue-200 font-semibold rounded-full flex justify-center items-center w-12 h-4 justify-self-center -ml-5 sm:ml-0'>SKBDN</button>
+            <p className='text-grayShade mb-[2px] justify-self-center'>Payment terms</p>
+            <button className='bg-fadeRed text-darkRed text-[9px] border-[1px] border-fadeRed font-semibold rounded-md flex justify-center items-center w-12 h-4 justify-self-center -ml-3 sm:ml-0'>SKBDN</button>
         </span>
         <span>
-            <p className='text-blue-700 v'>Total Price</p>
+            <p className='text-grayShade'>Total Price</p>
             <p>Rp. 6,141,892,00</p>
         </span>
     </div>

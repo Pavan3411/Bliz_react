@@ -46,7 +46,7 @@ const Login = () => {
             className="flex items-center justify-center flex-col col-start-1 col-end-2 row-start-1 row-end-2 z-20 px-20 py-0 overflow-hidden sign-in-form"
           >
             <h2 className="text-4xl text-slate-600 mb-3 ">Sign In</h2>
-            <div className="max-w-96 w-full h-14 bg-gray-100 my-3 mx-0 rounded-[55px] grid grid-cols-[0.15fr,0.85fr] p-2 items-center">
+            <div className="max-w-96 w-full h-14 bg-gray-100 my-3 mx-0 rounded-md grid grid-cols-[0.15fr,0.85fr] p-2 items-center">
               <span className="text-center">
                 <UserRegIcon className="text-slate-400 w-6 h-6" />
               </span>
@@ -57,7 +57,7 @@ const Login = () => {
                 required
               />
             </div>
-            <div className="max-w-96 w-full h-14 bg-gray-100 my-3 mx-0 rounded-[55px] grid grid-cols-[0.15fr,0.85fr] p-2 items-center">
+            <div className="max-w-96 w-full h-14 bg-gray-100 my-3 mx-0 rounded-md grid grid-cols-[0.15fr,0.85fr] p-2 items-center">
               <LockIcon className="text-slate-600 w-6 h-6" />
               <input
                 type="password"
@@ -69,7 +69,7 @@ const Login = () => {
             <input
               type="submit"
               value="login"
-              className="w-36 h-12 border-none outline-none rounded-[50px] cursor-pointer bg-blue-500 text-white uppercase font-bold my-3 mx-0 transition-all duration-75 hover:bg-[#4d84e2]"
+              className="w-36 h-12 border-none outline-none rounded-md cursor-pointer bg-lightRed text-white uppercase font-bold my-3 mx-0 transition-all duration-75 hover:bg-darkRed"
             />
             <p className="py-3 px-0 text-">Or Sign in with social platforms</p>
             <div className="flex justify-center gap-3">
@@ -77,7 +77,7 @@ const Login = () => {
                 <a
                   key={social.id}
                   href={social.link}
-                  className="border-[1px] shadow-lg hover:text-sky-500 transition-all duration-100 hover:border-blue-500 rounded-full p-2"
+                  className="border-[1px] shadow-lg hover:text-lightRed transition-all duration-100 hover:border-darkRed rounded-full p-2"
                 >
                   <span className="text-xl shadow-lg">{social.icon} </span>
                 </a>
@@ -89,7 +89,7 @@ const Login = () => {
             className="flex items-center justify-center flex-col col-start-1 col-end-2 row-start-1 row-end-2 z-10 opacity-0 sign-up-form"
           >
             <h2 className="text-4xl text-slate-600 mb-3">Sign Up</h2>
-            <div className="max-w-96 w-full h-14 bg-gray-100 my-3 mx-0 rounded-[55px] grid grid-cols-[0.15fr,0.85fr] p-2 items-center">
+            <div className="max-w-96 w-full h-14 bg-gray-100 my-3 mx-0 rounded-md grid grid-cols-[0.15fr,0.85fr] p-2 items-center">
               <span className="text-center">
                 <UserRegIcon className="text-slate-400 w-6 h-6" />
               </span>
@@ -100,7 +100,7 @@ const Login = () => {
                 required
               />
             </div>
-            <div className="max-w-96 w-full h-14 bg-gray-100 my-3 mx-0 rounded-[55px] grid grid-cols-[0.15fr,0.85fr] p-2 items-center">
+            <div className="max-w-96 w-full h-14 bg-gray-100 my-3 mx-0 rounded-md grid grid-cols-[0.15fr,0.85fr] p-2 items-center">
               <span className="text-center">
                 <EnvelopeIcon className="text-slate-400 w-6 h-6" />
               </span>
@@ -111,7 +111,7 @@ const Login = () => {
                 required
               />
             </div>
-            <div className="max-w-96 w-full h-14 bg-gray-100 my-3 mx-0 rounded-[55px] grid grid-cols-[0.15fr,0.85fr] p-2 items-center">
+            <div className="max-w-96 w-full h-14 bg-gray-100 my-3 mx-0 rounded-md grid grid-cols-[0.15fr,0.85fr] p-2 items-center">
               <LockIcon className="text-slate-600 w-6 h-6" />
               <input
                 type="password"
@@ -123,7 +123,7 @@ const Login = () => {
             <input
               type="submit"
               value="Register"
-              className="w-36 h-12 border-none outline-none rounded-[50px] cursor-pointer bg-blue-500 text-white uppercase font-bold my-3 mx-0 transition-all duration-75 hover:bg-[#4d84e2]"
+              className="w-36 h-12 border-none outline-none rounded-md cursor-pointer bg-lightRed text-white uppercase font-bold my-3 mx-0 transition-all duration-75 hover:bg-darkRed"
             />
             <p className="py-3 px-0 text-">Or Sign Up with social platforms</p>
             <div className="flex justify-center gap-3">
@@ -131,7 +131,7 @@ const Login = () => {
                 <a
                   key={social.id}
                   href={social.link}
-                  className="border-[1px] shadow-lg hover:text-sky-500 transition-all duration-100 hover:border-blue-500 rounded-full p-2"
+                  className="border-[1px] shadow-lg hover:text-darkRed transition-all duration-100 hover:border-darkRed rounded-full p-2"
                 >
                   <span className="text-xl shadow-lg">{social.icon} </span>
                 </a>
@@ -148,7 +148,7 @@ const Login = () => {
             Join our community to simplify and streamline your product operations.
             </p>
             <button
-              className="btn transparent m-0 bg-none border-2 border-solid border-white rounded-full w-32 h-10 font-semibold text-sm"
+              className="btn transparent m-0 bg-none border-2 border-solid border-white rounded-md w-32 h-10 font-semibold text-sm"
               id="sign-up-btn"
             >
               Sign Up
@@ -163,7 +163,7 @@ const Login = () => {
             Access your dashboard and manage your products efficiently.
             </p>
             <button
-              className="btn transparent m-0 bg-none border-2 border-solid border-white w-32 h-10 font-semibold text-sm rounded-full"
+              className="btn transparent m-0 bg-none border-2 border-solid border-white w-32 h-10 font-semibold text-sm rounded-md"
               id="sign-in-btn"
             >
               Sign In

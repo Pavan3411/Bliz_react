@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face { font-family: FilsonProRegular; src: url(../Font/FilsonProRegular.otf); font-weight: 400; font-style: normal; }
 
 *{
   margin: 0;
@@ -12,6 +13,8 @@
 
 body{
   margin: 3px;
+  /* font-family: 'FilsonProRegular', sans-serif; */
+
 }
 #sidepanel {
   position: fixed;
@@ -37,4 +40,81 @@ body{
   -ms-overflow-style: none; /* Hides scrollbar for IE and Edge */
   scrollbar-width: none; /* Hides scrollbar for Firefox */
 }
+/* 
+.input-group{
+  position: relative;
+  margin: 20px 0;
+}
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  padding: 0 5px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.input-group input {
+  width: 360px;
+  height: 40px;
+  font-size: 16px;
+  padding: 0 10px;
+  background: transparent;
+  border: 1.2px solid black;
+  outline: none;
+  border-radius: 5px;
+}
+.input-group input:focus~label,
+.input-group input:valid~label{
+  top: 0;
+  font-size: 12px;
+  background-color: white;
+} */
+/* Container Styles */
+.input-container {
+  position: relative;
+/* Set width to demonstrate layout */
+}
 
+/* Input Field Styles */
+.input-field {
+  border: 2px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px 12px; /* Padding for input field */
+  width: 100%; /* Full width */
+  font-size: 16px; /* Normal font size */
+  outline: none; /* Remove default outline */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus */
+}
+
+.input-field:focus {
+  border-color: #ef4444; /* Red border on focus */
+  box-shadow: 0 0 5px #ef4444; /* Subtle glow on focus */
+}
+
+.input-field::placeholder {
+  color: transparent; /* Hide placeholder text */
+}
+
+/* Label Styles */
+.input-label {
+  position: absolute;
+  left: 12px; /* Align with input padding */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+  background-color: white; /* White background to overlap input */
+  padding: 0 2px; /* Small padding for better visibility */
+  color: #aaa; /* Gray color for label */
+  font-size: 16px; /* Same as input font size */
+  transition: all 0.3s ease; /* Smooth transition */
+  pointer-events: none; /* Prevent label from blocking input clicks */
+}
+
+/* Float the label when input is focused or has value */
+.input-field:focus + .input-label,
+.input-field:not(:placeholder-shown) + .input-label {
+  top: 0px; /* Move label above the input */
+  font-size: 12px; /* Smaller font size for floated label */
+  color: #ef4444; /* Red color for focused state */
+}
