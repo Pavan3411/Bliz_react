@@ -1,23 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Toggle = () => {
-  const [toggled, setToggled] = useState(false);
-
+const Toggle = ({ onClick, isPrimary }) => {
   return (
     <div className="flex items-center">
       <button
-        className={`bg-gray-200 border-2 border-gray-400 rounded-full w-8 h-4 cursor-pointer shadow-lg relative transition-all ${
-          toggled ? 'bg-gray-600' : 'bg-gray-300'
+        role="switch"
+        aria-checked={isPrimary}
+        aria-label="Toggle Switch"
+        className={`relative w-9 h-5 flex items-center rounded-full transition-all duration-300 ${
+          isPrimary ? 'bg-red-400' : 'bg-gray-200 border-2 border-gray-400'
         }`}
-        onClick={() => setToggled(!toggled)}
+        onClick={onClick} // Directly call parent function
+        onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onClick()}
       >
         <div
-          className={`h-3 w-3 bg-white rounded-full absolute top-1/2 transition-all transform ${
-            toggled ? 'translate-x-4 -translate-y-1/2' : 'translate-x-1 -translate-y-1/2'
+          className={`h-3 w-3 bg-white rounded-full shadow-md transform transition-all duration-300 ${
+            isPrimary ? 'translate-x-5 bg-lightRed' : 'translate-x-1 bg-gray-500'
           }`}
         ></div>
       </button>
-    
     </div>
   );
 };

@@ -20,13 +20,13 @@ const Payment = () => {
     { label: "Quotes ( 0 )" },
   ];
   return (
-    <div className='flex bg-gray-100 overflow-hidden'>
+    <div className='flex w-full overflow-hidden px-5 gap-5'>
         <div className='w-1/4 lg:basis-1/4 md:basis-1/4 hidden lg:block'>
         <SidePanel/>
         </div>
-        <div className='lg:w-3/4 md:3/4 w-full mt-2 p-1 lg:p-3 md:p-3 mr-3'>
-        <div className='flex flex-col sm:flex-row sm:justify-between bg-white shadow-lg p-4 w-full sm:items-center'>
-            <h1 className='font-bold text-lg sm:text-xl text-lightRed'>PAYMENT</h1>
+        <div className='w-full flex flex-col gap-5'>
+        <div className='flex flex-col sm:flex-row sm:justify-between bg-white shadow-md p-4 w-full sm:items-center rounded-md mt-5'>
+            <h1 className='font-extrabold md:font-bold text-xl text-lightRed px-2'>Payment</h1>
             <div className='flex space-x-3 justify-between mt-2 sm:mt-0'>
                 <span className='relative'>
                 <input type="text" placeholder='Search' className='rounded-md border-[1px] border-gray-200 p-2 focus:outline-none placeholder:text-center placeholder:text-sm w-28' />
@@ -43,8 +43,8 @@ const Payment = () => {
                 </button>
             </div>
         </div>
-        <div className='bg-white shadow-lg p-2 mt-3 '>
-        <div className="flex gap-4 text-gray-600 font-medium text-[13px] mt-5 px-2 ">
+        <div className='bg-white shadow-md rounded-md p-4'>
+        <div className="flex gap-4 text-gray-600 font-medium text-[13px]">
       {tabs.map((tab, index) => (
         <p
           key={index}

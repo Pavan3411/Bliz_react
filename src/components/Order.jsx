@@ -20,13 +20,13 @@ const Order = () => {
     { label: "Quotes ( 0 )" },
   ];
   return (
-    <div className='flex bg-gray-100 overflow-hidden'>
-        <div className='w-1/4 md:w-1/4 xl:basis-1/4 hidden lg:block'>
+    <div className='flex overflow-hidden w-full px-5 gap-5'>
+        <div className='basis-1/4 hidden lg:block'>
         <SidePanel/>
         </div>
-        <div className='lg:w-3/4 w-full mt-2 p-1 lg:p-3 md:p-3 mr-3'>
-        <div className='flex flex-col sm:flex-row sm:justify-between  bg-white shadow-lg p-4 w-full sm:items-center'>
-            <h1 className='font-bold text-lg sm:text-xl text-lightRed'>Order</h1>
+        <div className='w-full mt-5 flex flex-col gap-5'>
+        <div className='flex flex-col sm:flex-row sm:justify-between  bg-white shadow-md p-4 w-full sm:items-center rounded-md'>
+            <h1 className='font-extrabold md:font-bold text-xl text-lightRed px-2'>Order</h1>
             <div className='flex space-x-3 justify-between mt-2 sm:mt-0'>
                 <span className='relative'>
                 <input type="text" placeholder='Search' className='rounded-md border-[1px] border-gray-200 p-2 focus:outline-none placeholder:text-center placeholder:text-sm w-28' />
@@ -43,8 +43,8 @@ const Order = () => {
                 </button>
             </div>
         </div>
-        <div className='bg-white shadow-lg px-2 py-3 pb-6 mt-4 mb-5 '>
-        <div className="flex gap-4 text-gray-600 font-medium text-sm mt-5 px-2">
+        <div className='bg-white shadow-md p-4 rounded-md'>
+        <div className="flex gap-4 text-gray-600 font-medium text-sm">
       {tabs.map((tab, index) => (
         <p
           key={index}
@@ -175,7 +175,7 @@ const Order = () => {
                                 <button className='bg-red-100 text-red-900 border-[1px] border-red-300 text-[8px] md:text-[9px] lg:text-[9px] font-semibold rounded-md flex justify-center items-center lg:w-24 md:w-24 w-20 h-4 p-2'>Not Available Yet</button>
                                 <p>Rp 1.329.000</p>
                             </div>
-                            <hr className='mt-2' />
+                            <hr className='mt-2 flex' />
                             <div className='text-red-600 text-[13px] flex flex-col lg:flex-row lg:gap-4 gap-1 font-semibold p-2 lg:w-full md:w-full w-[144%] whitespace-nowrap'>
                                 <p>* All transaction cost will be paid by buyer.</p>
                                 <p>* Order will be confirmed on receipt of the payment.</p>

@@ -50,6 +50,18 @@ const delivery = ({ onClose, onSubmit}) => {
           </div>
 
           <div className="flex flex-col gap-2 mt-4 px-5 text-xs lg:text-base md:text-sm">
+          <span>
+                <label htmlFor="regency">Select Address</label>
+                <select name="regency" id="regency" className="w-full border border-gray-300 p-2 rounded" onChange={handleFormfield}>
+                <option value="" disabled selected>
+                      Select Address
+                    </option>
+
+                  <option value="one">One</option>
+                  <option value="two">Two</option>
+                  
+                </select>
+              </span>
             <span>
               <label htmlFor="add">Address Name</label>
               <input type="text" name="address" className="w-full border border-gray-300 p-2 rounded" onChange={handleFormfield} />

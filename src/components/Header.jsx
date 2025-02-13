@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { assets, icons } from '../assets/assets';
 import { Link } from 'react-router-dom';
 import Invite from './Invite';
+import UserContext from '../context/UserContext';
 
 const Header = ({toggleSidePanel}) => {
   const { InviteIcon, GroupsIcon, LanguageIcon, FilterIcon, BellIcon, UserIcon, CrossIcon } = icons;
 
-
+  const {notificationData} = useContext(UserContext);
   const [openDropdown, setOpenDropdown] = useState(null);
 
   
@@ -41,7 +42,7 @@ const Header = ({toggleSidePanel}) => {
       
       <div className='flex gap-5 items-center'>
         <Link to="/" className="hidden lg:block md:block">
-          <img src={assets.Fbi_logo} alt="Logo" className='w-44 h-12' />
+          <img src={assets.Fbi_logo} alt="Logo" className='w-48 h-12' />
         </Link>
         <Link to="/" className="lg:hidden md:hidden block mx-0">
           <img src={assets.fb_logo} alt="Head Icon" className='w-12 h-10' />
@@ -64,43 +65,40 @@ const Header = ({toggleSidePanel}) => {
           <p className="hidden lg:block md:block">Invite</p>
         </div>
 
-        <div className="relative flex items-center gap-x-2">
-          {/* <LanguageIcon className="w-5 h-5" /> */}
+        
+          
+        <div className="relative">
           <button
-            onClick={toggleLanguageDropdown}
-            className="flex items-center gap-2 bg-gray-100 py-2 px-4 rounded focus:outline-none"
+            onClick={toggleUserDropdown}
+            className="p-2 rounded-full hover:bg-gray-100 focus:outline-none"
           >
-            <img
-              src={selectedLanguage === "EN" ? assets.EN : assets.ID}
-              alt={selectedLanguage}
-              className="w-5 h-5"
-            />
-            <p>{selectedLanguage}</p>
+            <img src={assets.user_img} className="w-[21px] h-[21px]" />
           </button>
-          {openDropdown === 'language' && (
-            <div className="absolute top-full mt-1 z-50 bg-white shadow-md rounded w-32">
-              <div
-                className="flex items-center gap-2 px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                onClick={() => selectLanguage("EN")}
+
+          {openDropdown === 'user' && (
+            <div className="absolute right-0 mt-2 bg-white shadow-md rounded w-40">
+              <Link
+                to="/"
+                onClick={() => setOpenDropdown(null)}
+                className="block px-4 py-2 text-gray-700 hover:bg-gray-200 active:bg-lightRed active:text-white"
               >
-                <img src={assets.EN} alt="EN" className="w-5 h-5" />
-                <p>EN</p>
-              </div>
-              <div
-                className="flex items-center gap-2 px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                onClick={() => selectLanguage("ID")}
+                Dashboard
+              </Link>
+              <Link to='/login'
+                onClick={() => setOpenDropdown(null)}
+                className="block px-4 py-2 text-gray-700 hover:bg-gray-200 active:bg-lightRed active:text-white"
               >
-                <img src={assets.ID} alt="ID" className="w-5 h-5" />
-                <p>ID</p>
-              </div>
+                Logout
+              </Link>
             </div>
           )}
         </div>
-
         
         <div className='relative flex items-center'>
           <button onClick={() => setOpenDropdown(openDropdown === 'notification' ? null : 'notification')}>
-            <BellIcon className="w-5 h-5"/>
+            <img src={assets.notification_img} className="w-[18px] h-[20px] relative"/>
+            <span className='absolute -top-[7px] -right-[7px] z-10 bg-lightRed rounded-full flex items-center justify-center w-4 h-4'>
+            <p className='text-[8px] font-medium text-white'>{notificationData?.data?.notificationCount}</p></span>
           </button>
           {openDropdown === 'notification' && (
             <div className='absolute z-10 top-2 -right-10 lg:right-0 md:right-0 lg:w-96 md:w-96 w-80 rounded-lg shadow-lg bg-white border-[1px] border-gray-300'>
@@ -165,30 +163,36 @@ const Header = ({toggleSidePanel}) => {
           )}
         </div>
 
-        
-        <div className="relative">
+        <div className="relative flex items-center gap-x-2">
+          {/* <LanguageIcon className="w-5 h-5" /> */}
           <button
-            onClick={toggleUserDropdown}
-            className="p-2 rounded-full hover:bg-gray-100 focus:outline-none"
+            onClick={toggleLanguageDropdown}
+            className="flex items-center gap-2 bg-gray-100 py-2 px-4 rounded focus:outline-none"
           >
-            <UserIcon className="w-5 h-5" />
+            <img
+              src={selectedLanguage === "EN" ? assets.EN : assets.ID}
+              alt={selectedLanguage}
+              className="w-5 h-5"
+            />
+            <p>{selectedLanguage}</p>
           </button>
-
-          {openDropdown === 'user' && (
-            <div className="absolute right-0 mt-2 bg-white shadow-md rounded w-40">
-              <Link
-                to="/"
-                onClick={() => setOpenDropdown(null)}
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-200 active:bg-lightRed active:text-white"
+          {openDropdown === 'language' && (
+            <div className="absolute top-full mt-1 z-50 bg-white shadow-md rounded w-32">
+              <div
+                className="flex items-center gap-2 px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                onClick={() => selectLanguage("EN")}
               >
-                Dashboard
-              </Link>
-              <Link to='/login'
-                onClick={() => setOpenDropdown(null)}
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-200 active:bg-lightRed active:text-white"
+                <img src={assets.EN} alt="EN" className="w-5 h-5" />
+                <p>EN</p>
+                
+              </div>
+              <div
+                className="flex items-center gap-2 px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                onClick={() => selectLanguage("ID")}
               >
-                Logout
-              </Link>
+                <img src={assets.ID} alt="ID" className="w-5 h-5" />
+                <p>ID</p>
+              </div>
             </div>
           )}
         </div>

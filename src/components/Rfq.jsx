@@ -14,19 +14,20 @@ const Rfq = () => {
     
 
   const tabs = [
-    { label: "Processing ( 1 )" },
+    { label: "Recieved ( 1 )" },
+    { label: "Sent ( 0 )" },
+    { label: "InProgress ( 0 )" },
     { label: "Completed ( 0 )" },
-    { label: "Expired ( 0 )" },
-    { label: "Quotes ( 0 )" },
+    {label: "Cancelled (1)"},
   ];
   return (
-    <div className='flex bg-gray-100 overflow-hidden'>
-        <div className='w-1/4 lg:basis-1/4 md:basis-1/4 hidden lg:block'>
+    <div className='flex w-full  overflow-hidden px-5 gap-5'>
+        <div className='lg:basis-1/4 md:basis-1/4 hidden lg:block'>
         <SidePanel/>
         </div>
-        <div className='lg:w-3/4 w-full mt-2 p-1 lg:p-3 md:p-3 mr-3'>
-        <div className='flex flex-col sm:flex-row sm:justify-between bg-white shadow-lg p-4 w-full sm:items-center'>
-            <h1 className='font-bold text-lg sm:text-xl text-grayShade'>Total RFQ</h1>
+        <div className='w-full mt-5 flex flex-col gap-5'>
+        <div className='flex flex-col sm:flex-row sm:justify-between bg-white shadow-md p-4 w-full sm:items-center rounded-md'>
+            <h1 className='font-extrabold md:font-bold text-xl text-lightRed px-2  '>Total RFQ</h1>
             <div className='flex space-x-3 justify-between mt-2  md:mt-0'>
                 <span className='relative'>
                 <input type="text" placeholder='Search' className='rounded-md border-[1px] border-gray-200 p-2 focus:outline-none placeholder:text-center  placeholder:text-sm w-28' />
@@ -43,8 +44,8 @@ const Rfq = () => {
                 </button>
             </div>
         </div>
-        <div className='bg-white shadow-lg py-3 pb-6 mt-4 mb-5 w-full'>
-        <div className="flex gap-4 text-gray-600 font-medium text-[13px] mt-5 px-2">
+        <div className='bg-white shadow-md w-full rounded-md p-4'>
+        <div className="flex gap-4 text-gray-600 font-medium text-[13px]">
       {tabs.map((tab, index) => (
         <p
           key={index}
@@ -58,8 +59,8 @@ const Rfq = () => {
       ))}
     </div>
         <hr className=' bg-gray-500 h-[2px] mt-3'/>
-        <div className='overflow-x-auto bg-white md:overflow-hidden scrollbar-thin scrollbar-thumb-lightRed scrollbar-track-fadeRed lg:w-full md:w-full'>
-    <div className='text-gray-400 xl:text-sm text-xs grid items-center w-[150%] md:w-[98%] grid-cols-[0.4fr,2fr,1.6fr,2fr,2fr,1fr] mt-7 lg:mx-4 md:mx-4 mx-2  font-semibold'>
+        <div className='overflow-x-auto md:overflow-hidden scrollbar-thin scrollbar-thumb-lightRed scrollbar-track-fadeRed lg:w-full md:w-full'>
+    <div className='text-gray-400 xl:text-sm text-xs grid items-center w-[150%] md:w-[98%] px-3 grid-cols-[0.4fr,2fr,1.6fr,2fr,2fr,1fr] mt-7 md:mx-3 mx-2  font-semibold'>
             <input type='checkbox' className='border-[1px] border-gray-500 w-4 h-4'/>
             <p>Order ID</p>
             <p>Payment Method</p>
@@ -67,7 +68,7 @@ const Rfq = () => {
             <p>Expected Delivery Date</p>
             <p>Status</p>
         </div>
-        <div className='xl:text-sm text-xs grid w-[150%] md:w-[98%] grid-cols-[0.4fr,2fr,1.6fr,2fr,2fr,1fr] mt-7 lg:mx-3 md:mx-3 mx-[5px] items-center border-[1px] border-gray-300 p-1 py-3 bg-fadeRed' onClick={handleToggle}>
+        <div className='xl:text-sm text-xs grid w-[150%] md:w-[98%] grid-cols-[0.4fr,2fr,1.6fr,2fr,2fr,1fr] mt-7 lg:mx-3 md:mx-3 mx-[5px] items-center p-1 py-3 px-3 bg-gray-200' onClick={handleToggle}>
             <input checked={isOpen} readOnly type='checkbox' className='border-[1px] border-gray-500 w-4 h-4'/>
             <p className='font-bold'>RFQ _12039020841</p>
             <button className='bg-red-100 text-red-900 text-[10px] font-semibold border-[1px] border-red-200 rounded-md flex justify-center items-center w-16 h-4'>Credit</button>

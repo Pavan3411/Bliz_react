@@ -18,12 +18,36 @@ import lock_photo from './lock_png.png'
 import fbi_logo_white from './fbi_logo_white.png'
 import plus_img from './plus_img.png'
 import repeat_png from './repeat.png'
-import postIcon from './post.png'
-import dashboard_Icon from './dashboard_Icon.png'
-import rfq_Icon from './rfq_Icon.png'
-import order_Icon from './order_Icon.png'
-import payment_Icon from './payment_Icon.png'
-import address_Icon from './address_Icon.png';
+import postSvg from './post1.svg'
+import dashboardSvg from './Dashboard1.svg'
+import rfqSvg from './rfq1.svg'
+import orderSvg from './order1.svg'
+import quotesSvg from './Quotes1.svg'
+import paymentSvg from './payment1.svg'
+import addressSvg from './address1.svg'
+import Vector_png from './Vector.png'
+import check_svg from './check_svg.svg'
+// import quoteImg from './quoteImg.png'
+import rightArrow from './rightArrow.svg'
+import leftArrow from './leftArrow.svg'
+import user_img from './user_img.svg'
+import language_img from './language_img.png'
+import notification_img from './notification_img.png'
+import forward_svg from './forward_svg.svg'
+import FBILogoNew from './FBILogoNew.png'
+import flagImg from './flag.png'
+import emailImg from './email.png'
+import GreatBritain from './GreatBritain.png'
+import Connect from './Connect.png'
+import Eye from './Eye.png'
+import email1 from './email1.png'
+import companies from './companies.png'
+import password from './password.png'
+import HandDown from './HandDown.png'
+import bgimg from './bgimg.jpg'
+import productImage from './productImage.png'
+import surePng from './sure.png'
+import binPng from './bin.png'
 import { FaCircleUser } from 'react-icons/fa6'
 import { BsBellFill } from 'react-icons/bs'
 import { GrLanguage } from 'react-icons/gr'
@@ -48,9 +72,10 @@ import { PiNotePencilThin } from 'react-icons/pi'
 import { HiMiniArrowSmallRight } from 'react-icons/hi2'
 import { IoMdCheckboxOutline } from 'react-icons/io'
 import { FaRegRectangleXmark } from 'react-icons/fa6'
-import { CiSquarePlus } from 'react-icons/ci'
+import { FiPlusSquare } from 'react-icons/fi'
 import { GrAttachment } from 'react-icons/gr'
-import { IoIosSearch } from 'react-icons/io'
+import { IoSearch } from 'react-icons/io5'
+
 import { BsFilterLeft } from 'react-icons/bs'
 import { PiDotsThreeVerticalBold } from 'react-icons/pi'
 import { GiHamburgerMenu } from 'react-icons/gi'
@@ -73,6 +98,16 @@ import { PiArrowLineRightFill } from 'react-icons/pi'
 import { MdImageSearch } from 'react-icons/md'
 import { MdModeEdit } from 'react-icons/md'
 import { RiDeleteBin5Fill } from 'react-icons/ri'
+import { CgFileAdd } from 'react-icons/cg'
+import { RxDashboard } from 'react-icons/rx'
+import { FiFileText } from 'react-icons/fi'
+import { LuShoppingBag } from 'react-icons/lu'
+import { VscCreditCard } from 'react-icons/vsc'
+import { SlLocationPin } from 'react-icons/sl'
+import { TbCheckbox } from 'react-icons/tb'
+import { FaArrowRightLong } from 'react-icons/fa6'
+import { FaArrowLeftLong } from 'react-icons/fa6'
+import { IoEye } from 'react-icons/io5'
 
 export const assets = {
   logo,
@@ -91,16 +126,39 @@ export const assets = {
   fb_logo,
   fbi_white,
   ps,
+  FBILogoNew,
   lock_photo,
   fbi_logo_white,
   plus_img,
   repeat_png,
-  postIcon,
-  dashboard_Icon,
-  rfq_Icon,
-  order_Icon,
-  payment_Icon,
-  address_Icon,
+  Vector_png,
+  postSvg,
+  dashboardSvg,
+  rfqSvg,
+  orderSvg,
+  quotesSvg,
+  paymentSvg,
+  addressSvg,
+  user_img,
+  language_img,
+  notification_img,
+  forward_svg,
+  check_svg,
+  rightArrow,
+  leftArrow,
+  flagImg,
+  emailImg,
+  GreatBritain,
+  Connect,
+  Eye,
+  email1,
+  companies,
+  password,
+  HandDown,
+  bgimg,
+  productImage,
+  surePng,
+  binPng,
 }
 
 export const icons = {
@@ -129,9 +187,9 @@ export const icons = {
   RightArrowIcon: HiMiniArrowSmallRight,
   TickIcon: IoMdCheckboxOutline,
   CrossIcon: FaRegRectangleXmark,
-  PlusIcon: CiSquarePlus,
+  PlusIcon: FiPlusSquare,
   AttachmentIcon: GrAttachment,
-  SearchIcon: IoIosSearch,
+  SearchIcon: IoSearch,
   FilterIcon: BsFilterLeft,
   ThreeDotsIcon: PiDotsThreeVerticalBold,
   HamburgerMenuIcon: GiHamburgerMenu,
@@ -154,7 +212,16 @@ export const icons = {
   SearchImageIcon: MdImageSearch,
   EditFillIcon: MdModeEdit,
   DeleteFillIcon: RiDeleteBin5Fill,
-  
+  postIcon: CgFileAdd,
+  dashboard_Icon: RxDashboard,
+  rfq_Icon: FiFileText,
+  order_Icon: LuShoppingBag,
+  payment_Icon: VscCreditCard,
+  address_Icon: SlLocationPin,
+  checkBoxIcon: TbCheckbox,
+  rArrow: FaArrowRightLong,
+  lArrow: FaArrowLeftLong,
+  EyeIcon: IoEye,
 }
 
 export const designations = [

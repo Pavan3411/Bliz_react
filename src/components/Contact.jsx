@@ -1,8 +1,10 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import { assets, icons } from '../assets/assets'
+import UserContext from '../context/UserContext';
 
 const Contact = ({ onClose, onSubmit }) => {
   const { CrossIcon, PlusIcon } = icons;
+  const { contactData } = useContext(UserContext)
   const [contactForm, setContactForm] = useState({
     salutation:'',
     fname:'',
@@ -15,7 +17,7 @@ const Contact = ({ onClose, onSubmit }) => {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => {
-      document.body.style.overflow = '';
+  document.body.style.overflow = '';
     };
   },[]);
 
@@ -80,6 +82,8 @@ const Contact = ({ onClose, onSubmit }) => {
                 <input
                   type="text"
                   className="w-full border border-gray-300 p-2 focus:outline-none" name='lname' onChange={handleContactForm}
+                  
+
                 />
               </span>
             </span>
@@ -89,6 +93,7 @@ const Contact = ({ onClose, onSubmit }) => {
                 <input
                   type="email"
                   className="w-full border border-gray-300 p-2 focus:outline-none" name='email' onChange={handleContactForm}
+                  
                 />
               </span>
               <span>
@@ -99,6 +104,7 @@ const Contact = ({ onClose, onSubmit }) => {
                     name="salutationphone"
                     id="salutationphone"
                     onChange={handleContactForm}
+                    
                   >
                     <option value="61">+61</option>
                     <option value="62">+62</option>
@@ -108,6 +114,7 @@ const Contact = ({ onClose, onSubmit }) => {
                   type="number"
                   className="w-full border border-gray-300 p-2 focus:outline-none" name='number'
                   onChange={handleContactForm}
+                  
                 />
                 </span>
               </span>

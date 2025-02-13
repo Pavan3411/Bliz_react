@@ -23,8 +23,8 @@ const Setting = ({ handleGoBack }) => {
   const tabs = [{ label: 'Profile' }, { label: 'Admin Setting' }]
 
   return (
-    <div className="flex flex-col space-y-10 m-2">
-      <div className="flex bg-gray-200 mt-2 p-2 w-full justify-between font-medium">
+    <div className="flex flex-col space-y-10 m-2 bg-white">
+      <div className="fle p-2 w-full justify-between font-medium bg-grayHr">
         <div className="flex gap-10">
           {tabs.map((tab, index) => (
             <p
@@ -335,7 +335,7 @@ const Setting = ({ handleGoBack }) => {
           </div>
         )}
         {currentTab === 1 && (
-          <div className="border-2 border-gray-200 border-l-0 w-4/6 justify-between flex p-5 px-16">
+          <div className="border-2 border-gray-200 border-l-0 w-4/6 justify-between flex p-5 px-16 bg-white">
             <div className="w-1/3">
               <img src={assets.lock_photo} alt="" className="w-44 h-44" />
             </div>

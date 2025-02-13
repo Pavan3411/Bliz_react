@@ -12,7 +12,7 @@
 }
 
 body{
-  margin: 3px;
+  margin: 0px;  
   /* font-family: 'FilsonProRegular', sans-serif; */
 
 }
@@ -39,6 +39,20 @@ body{
 .no-scrollbar {
   -ms-overflow-style: none; /* Hides scrollbar for IE and Edge */
   scrollbar-width: none; /* Hides scrollbar for Firefox */
+}
+.borderGray{
+  /* border: solid 1px black; */
+  /* opacity: 12.5%; */
+}
+.img-color-filter {
+  filter: grayscale(1) brightness(0) invert(1);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+input, select{
+  padding: 2px;
 }
 /* 
 .input-group{
@@ -118,3 +132,35 @@ body{
   font-size: 12px; /* Smaller font size for floated label */
   color: #ef4444; /* Red color for focused state */
 }
+
+.skeleton-wrapper{
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-wrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: loading 1.5s infinite ease-in-out;
+
+  
+}
+.shimmer{
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-15deg);
+  box-shadow: 0 0 30px 30px rgba(255,255,255,0.05);
+}
+@keyframes loading {
+  0% { transform: translateX(-150%); opacity: 0; }
+  45% { opacity: 1; }  /* Suddenly appears */
+  55% { opacity: 1; }  /* Stays visible briefly */
+  100% { transform: translateX(150%); opacity: 0; }
+}
+/* .toastBody{
+  color: green;
+  background-color: rgb(204, 253, 204);
+} */
