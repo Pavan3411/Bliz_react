@@ -1,21 +1,22 @@
 import React, { useState } from 'react'
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
-import './App.css'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Home from './components/Home'
-import FormRfq from './components/FormRfq'
-import Rfq from './components/Rfq'
-import Payment from './components/Payment'
-import Order from './components/Order'
-import SidePanel from './components/SidePanel'
-import Login from './components/Login/Login'
-import Setting from './components/Setting'
-import Address from './components/Address'
-import Notification from './components/Notification'
-import Quotes from './components/Quotes'
-import UserContextProvider from './context/UserContextProvider'
+import Header from '@reusables/Header'
+import Footer from '@reusables/Footer'
+import Home from '@pages/DashBoard/Home'
+import FormRfq from '@pages/Home/FormRfq'
+import Rfq from '@pages/Rfq/Rfq'
+import Payment from '@pages/Payment/Payment'
+import Order from '@pages/Order/Order'
+import SidePanel from '@reusables/SidePanel'
+import Login from '@pages/Login/Login'
+import Setting from '@pages/Setting/Setting'
+import Address from '@pages/Address/Address'
+import Notification from '@components/Notification'
+import Quotes from '@pages/Quotes/Quotes'
+import UserContextProvider from '@context/UserContextProvider'
 import { ToastContainer } from 'react-toastify';
+import { Provider } from 'react-redux'
+import UserContext from './context/UserContext'
 
 function App() {
   const [showSidePanel, setShowSidePanel] = useState(false)
@@ -86,7 +87,7 @@ bodyClassName='toastBody'
                   path="/setting"
                   element={<Setting handleGoBack={handleGoBack} />}
                 />
-                <Route path="/address" element={<Address />} />
+                <Route path="/address" element={<Address />} /> 
                 <Route path="/quote" element={<Quotes />} />
                 <Route path="/notification" element={<Notification />} />
               </Routes>

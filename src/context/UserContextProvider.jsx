@@ -1,30 +1,24 @@
 import React, { useState } from 'react'
-import useFetch from '../components/useFetch'
+import useFetch from '@hooks/useFetch'
 import axios from 'axios'
 import { useQuery } from '@tanstack/react-query'
 import UserContext from './UserContext'
 import { toast } from 'react-toastify';
 
 const UserContextProvider = ({ children }) => {
-  // const [user,setUser] = useState(null)
-  // const {
-  //   data: contactData,
-  //   loading: contactLoading,
-  //   error: contactError,
-  // } = useFetch('/api/fetch-contact-details', 'POST')
 
   const fetchContact = async () => {
     try {
-      const token = localStorage.getItem('token') // Get token from localStorage
+      const token = localStorage.getItem('token') 
 
       if (!token) {
         throw new Error('No token found. Please log in.')
       }
-      console.log('Token:', token) // ✅ Log the token to verify
+      console.log('Token:', token) 
 
       const response = await axios.post(
         'https://cams-exim.com/api/fetch-contact-details',
-        {}, // If the API requires a request body, add relevant data here
+        {},
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -33,7 +27,7 @@ const UserContextProvider = ({ children }) => {
         }
       )
 
-      console.log('API Response:', response.data) // ✅ Log the response
+      console.log('API Response:', response.data)
 
       return response.data
     } catch (error) {
@@ -41,7 +35,7 @@ const UserContextProvider = ({ children }) => {
         'API Request Failed:',
         error.response ? error.response.data : error.message
       )
-      throw error // Ensure React Query handles the error
+      throw error
     }
   }
   const {
@@ -51,9 +45,8 @@ const UserContextProvider = ({ children }) => {
   } = useQuery({
     queryKey: ['contact'],
     queryFn: fetchContact,
-    staleTime: 1000 * 60, // This now includes the Authorization header
+    staleTime: 1000 * 60,
   })
-  // console.log("contact Informationnnnnnnnnnn",contactData);
 
   const { data: notificationData } = useFetch('/api/get-notification', 'GET')
 
@@ -68,22 +61,6 @@ const UserContextProvider = ({ children }) => {
     refetch: addressReFetch,
   } = useFetch(`/api/fetch_addresses/${company_id}`, 'POST')
   const addressDataLength = addressData?.addresses?.length || 0;
-  //   const address_id = addressData?.addresses?.id;
-
-  // const fetchCity = async (city_id) => {
-  //   const res = await fetch(`/api/cities/${city_id}`);
-  //   return res.json();
-  // };
-
-  // const fetchState = async (state_id) => {
-  //   const res = await fetch(`/api/states/${state_id}`);
-  //   return res.json();
-  // };
-
-  // const fetchCountry = async (country_id) => {
-  //   const res = await fetch(`/api/countries/${country_id}`);
-  //   return res.json();
-  // };
 
   const {
     data: countryData,
@@ -105,38 +82,15 @@ const UserContextProvider = ({ children }) => {
     loading: cityLoading,
     error: cityError,
   } = useFetch(`/api/getCities/${selectedStateId}`, 'POST')
-
-  //   const getCountryName = (id) =>
-  //     addressData?.addresses?.find((c) => c.country_one_id  == id)?.name || 'Loading...';
-  //   const getStateName = (id) =>
-  //     stateData?.data?.find((s) => s.state_id
-  //   == id)?.name || 'Loading...';
-  //   const getCityName = (id) =>
-  //     addressData?.addresses?.find((c) => c.city_id == id)?.name || 'Loading...';
-
-  //   // Get array of state IDs from all addresses
-  // const stateIds = addressData?.addresses?.map(address => address.state_id) || [];
-
-  // console.log("All state IDs", stateIds);
-
-  // // If you need to fetch state names for all these IDs
-  // const { data: stateNames } = useFetch(
-  //   stateIds ? `/api/getStates/` : null,
-  //   'POST'
-  // );
   console.log('get names', addressData)
-  // console.log("Country Data:", getCountryName());
-  // console.log("State Data:", getStateName());
-  // console.log("City Data:", getCityName());
-
-  // Function to handle country selection
+  
   const handleCountryStateCityChange = (event) => {
     setSelectedCountryId(event.target.value)
     setSelectedStateId(event.target.value)
     setSelectedCityId(event.target.value)
-    // console.log('Selected Country ID:', event.target.value)
+    
   }
-  // console.log(selectedStateId)
+  
 
   const handleDeleteAddress = async (id) => {
     const token = localStorage.getItem('token')
@@ -167,36 +121,12 @@ const UserContextProvider = ({ children }) => {
       addressReFetch()
       toast.success('Address Deleted Successfully')
 
-      // Refetch the address data to update the UI
-      // addressReFetch();
     } catch (error) {
       console.error('Error deleting address:', error)
-      // if (error.response) {
-      //   // addressSetError(error.response.data); // Set error from response if any
-      // }
+     
     }
   }
 
-  // const handleUpdate = async () => {
-  //   try {
-  //     const response = await axios.post(
-  //       "https://cams-exim.com/api/update-address",
-  //       editAddress,
-  //       {
-  //         headers: {
-  //           Authorization: `Bearer ${token}`,
-  //           "Content-Type": "application/json",
-  //         },
-  //       }
-  //     );
-  
-  //     alert("Address updated successfully!");
-  //     setEditable(false);
-  //   } catch (error) {
-  //     console.error("Error updating address:", error);
-  //     alert(error.response?.data?.message || "Failed to update address.");
-  //   }
-  // };
 
   return (
     <UserContext.Provider
